@@ -1,0 +1,89 @@
+@import '@/assets/scss/_base.scss';
+
+.box {
+  background-color: transparent;
+  border-radius: 3px;
+  color: $ghost-white;
+  margin: auto;
+  width: 400px;
+  height: 300px;
+  transform-style: preserve-3d;
+  perspective: 2000px;
+  transition: .4s;
+  text-align: center;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border-top: 20px solid $ghost-white;
+    border-left: 20px solid $ghost-white;
+    box-sizing: border-box;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-bottom: 20px solid $ghost-white;
+    border-right: 20px solid $ghost-white;
+    box-sizing: border-box;
+  }
+  .fas {
+    font-size: 25px;
+    height: 50px;
+    width: 50px;
+    line-height: 50px !important;
+    background-color: $ghost-white;
+    color: $dark-spring-green;
+  }
+  .fa2 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+  }
+  .text {
+    position: absolute;
+    top: 30px;
+    left: -30px;
+    width: calc(100% + 60px);
+    height: calc(100% - 60px);
+    background-color: $dark-spring-green;
+    border-radius: 3px;
+    transition: .4s;
+    div {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      text-align: center;
+      width: 100%;
+      padding: 30px 60px;
+      line-height: 1.5;
+      box-sizing: border-box;
+      color: $ghost-white;
+      h3 {
+        font-size: 30px;
+        margin-bottom: 5px;
+      }
+      p {
+        font-size: 15px;
+      }
+    }
+  }
+  &:hover {
+    .text {
+      transform: rotateY(20deg) skewY(-3deg)
+    }
+    .fa2 {
+      right: 1px;
+    }
+    transform: rotateY(-20deg) skewY(3deg)
+  }
+}

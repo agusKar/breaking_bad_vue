@@ -1,0 +1,14 @@
+/* SCSS RGB */
+$english-violet: rgba(107, 78, 113);
+$smoky-black: rgba(23, 20, 18);
+$ghost-white: rgba(251, 251, 255);
+$yellow-green-crayola: rgba(201, 242, 153);
+$dark-spring-green: rgba(4, 114, 77);
+
+$colors: (
+    'primary-green': $dark-spring-green,
+    'secondary-violet': $english-violet,
+    'light-green': $yellow-green-crayola,
+    'light-gray': $ghost-white,
+    'dark-gray': $smoky-black
+);

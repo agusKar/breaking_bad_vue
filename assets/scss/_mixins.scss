@@ -1,0 +1,14 @@
+@mixin btn($textColor, $bgColor){
+    background-color: $bgColor;
+    color: $textColor;
+    transition: all .2s ease-in-out;
+    &:hover {
+        opacity: 0.95;
+        transform: scale(1.05);
+    }
+}
+@each $key, $val in $colors {
+    .btn-#{$key}{
+        @include btn($ghost-white, $val);
+    }
+}

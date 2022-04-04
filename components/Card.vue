@@ -1,8 +1,11 @@
 <template>
   <figure
+    v-if="Character"
     :style="`background: url(${Character.img});`"
   >
-    <h2>{{ Character.name }}</h2>
+    <h2 data-test="characterName">
+      {{ Character.name }}
+    </h2>
     <figcaption>
       <h3>{{ Character.name }}</h3>
       <p>
@@ -19,10 +22,13 @@
               </li>
             </ul>
           </li>
-          <li><b>Nickname:</b> {{ Character.nickname }}</li>
+          <li data-test="characterNickname">
+            <b>Nickname:</b> {{ Character.nickname }}
+          </li>
         </ul>
       </p>
       <b-button
+        data-test="characterButton"
         variant="secondary-violet"
         type="dark"
         :to="`/character/${ Character.char_id }`"

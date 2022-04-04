@@ -89,7 +89,6 @@ export default {
     async getRandomDeath () {
       try {
         const data = await axios('https://www.breakingbadapi.com/api/random-death')
-        console.log(data.data)
         this.character = data.data
       } catch (error) {
         console.log(error)

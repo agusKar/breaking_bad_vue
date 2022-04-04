@@ -114,7 +114,6 @@ export default {
         this.busy = true
         const data = await axios(`https://www.breakingbadapi.com/api/characters/${this.$route.params.id}`)
         this.character = data.data[0]
-        console.log(this.character)
         this.busy = false
       } catch (error) {
         console.log(error)

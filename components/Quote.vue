@@ -18,6 +18,12 @@
               <div>
                 <h3>{{ author }}</h3>
                 <p>{{ quote }}</p>
+                <button
+                  class="d-none"
+                  id="link_test"
+                  @click="clickLink">
+                  Link test
+                </button>
               </div>
             </div>
           </div>
@@ -32,7 +38,8 @@ export default {
   name: 'Quote',
   props: {
     idQuote: {
-      type: Number
+      type: Number,
+      default: 1
     }
   },
   data () {
@@ -47,6 +54,9 @@ export default {
     this.busy = true
   },
   methods: {
+    clickLink () {
+      window.location.href = '/character/2'
+    },
     async getQuote () {
       try {
         let dataUrl = ''

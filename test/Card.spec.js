@@ -1,14 +1,5 @@
 import { mount } from '@vue/test-utils'
 import Card from '@/components/Card.vue'
-import { BButton } from 'bootstrap-vue'
-/*import { createLocalVue } from '@vue/test-utils'
-
-// create an extended `Vue` constructor
-const localVue = createLocalVue()
-
-// install plugins as normal
-localVue.use(BootstrapVue)
-*/
 
 describe('Card', () => {
   test('is a Vue instance', () => {
@@ -16,7 +7,7 @@ describe('Card', () => {
     expect(wrapper.vm).toBeTruthy()
   })
 
-  test('props working fine', async () => {
+  test('props working fine', () => {
     const character = {
       img: '',
       name: 'Walter',
@@ -28,12 +19,8 @@ describe('Card', () => {
     }
 
     const wrapper = mount(Card, {
-      //localVue,
       propsData: {
         Character: character
-      },
-      stubs: {
-        'b-button': BButton
       }
     })
     const characterName = wrapper.find('h2[data-test="characterName"]')
@@ -43,7 +30,7 @@ describe('Card', () => {
 
     const characterButton = wrapper.find('[data-test="characterButton"]')
     expect(characterButton.text()).toMatch('More Info')
-    //await wrapper.find('[data-test="characterButton"]').trigger('click')
-    //expect(window.location.pathname).toEqual('/character/2')
+    /* wrapper.find('[data-test="characterButton"]').trigger('click')
+    expect(window.location.pathname).toEqual('/character/2') */
   })
 })
